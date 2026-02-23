@@ -1,3 +1,5 @@
+Retail Forecasting and Inventory Management
+
 The system uses historical sales data, trend analysis, and time-series forecasting techniques to estimate future sales patterns. Based on predicted demand, it provides insights into optimal stock replenishment strategies, helping retailers improve operational efficiency and minimize costs.
 
 🔹 Key Features:
