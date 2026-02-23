@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Retail Forecasting – Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Inventory Status</h2>
+
+<a href="{{ url_for('download_reorder') }}" class="btn">
+    Download Reorder Alerts CSV
+</a>
+<br><br>
+<div class="card">
+    {{ table | safe }}
+</div>
+
+<br>
+
+
+{% endblock %}

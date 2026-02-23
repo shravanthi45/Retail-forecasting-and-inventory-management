@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Manual Forecast (From Uploaded CSV)</h2>
+
+<div class="card" style="max-width:400px;">
+    <form method="post">
+        <label>Select Product</label><br><br>
+
+        <select name="product" required>
+            {% for p in products %}
+                <option value="{{ p }}">{{ p }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+        <button type="submit">Generate Forecast</button>
+    </form>
+</div>
+
+{% if result %}
+<div class="card" style="margin-top:30px;">
+    <h3>7-Day Forecast</h3>
+    <p>{{ result }}</p>
+</div>
+{% endif %}
+
+{% endblock %}

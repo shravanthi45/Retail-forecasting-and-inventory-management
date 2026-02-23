@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Upload Combined CSV</h2>
+<p>The  csv must contain Date,Product_ID,Quantity_Sold,Product_Name,Current_Inventory,Lead_Time</p>
+
+<div class="card" style="max-width:400px;">
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+{% endblock %}

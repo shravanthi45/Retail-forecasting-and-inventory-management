@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1 class="page-title">Retail Forecasting Dashboard</h1>
+
+<div class="kpi-grid">
+    <div class="kpi-card">Total Products<br><b>{{ total_products }}</b></div>
+    <div class="kpi-card">Action Items<br><b>{{ alerts }}</b></div>
+    <div class="kpi-card">
+    Reorder Risk (%)<br>
+    <b>{{ reorder_risk_pct }}%</b>
+</div>
+
+<div class="kpi-card">
+    Avg Daily Demand<br>
+    <b>{{ avg_daily_demand }}</b>
+</div>
+
+<div class="kpi-card">
+    Total Reorder Qty<br>
+    <b>{{ total_reorder_qty }}</b>
+</div>
+
+</div>
+
+<div class="dashboard-wrapper">
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+            {{ line|safe }}
+        </div>
+
+        <div class="chart-card">
+            {{ bar|safe }}
+        </div>
+
+        <div class="chart-card">
+            {{ pie|safe }}
+        </div>
+
+        <div class="chart-card">
+            {{ reorder|safe }}
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

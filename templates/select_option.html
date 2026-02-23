@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Select Upload Option</h2>
+
+<div class="option-btn-container">
+
+    <!-- OPTION 1 -->
+    <a href="{{ url_for('upload_combined') }}" class="option-button">
+        <h3>Option 1</h3>
+        <p>Upload Combined CSV</p>
+        <span>Sales + Inventory in one file</span>
+    </a>
+
+    <!-- OPTION 2 -->{% extends "base.html" %}
+{% block content %}
+<h2>Select Upload Option</h2>
+
+<div class="option-btn-container">
+    <a href="{{ url_for('upload_combined') }}" class="option-button">
+        <h3>Option 1</h3>
+        <p>Upload Combined CSV</p>
+    </a>
+
+    <a href="{{ url_for('upload_sales') }}" class="option-button">
+        <h3>Option 2</h3>
+        <p>Upload Separate CSVs</p>
+    </a>
+</div>
+{% endblock %}
+
+    <a href="{{ url_for('upload_sales') }}" class="option-button">
+        <h3>Option 2</h3>
+        <p>Upload Separate CSVs</p>
+        <span>Sales CSV & Inventory CSV</span>
+    </a>
+
+</div>
+
+{% endblock %}

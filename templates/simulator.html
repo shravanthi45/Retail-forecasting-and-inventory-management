@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">Inventory Simulator</h1>
+
+<form method="POST" class="simulator-form">
+
+    <label>Product</label>
+    <select name="product_id" required>
+        {% for pid in products %}
+            <option value="{{ pid }}">{{ pid }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Upcoming Promotion</label>
+    <select name="promo_factor">
+        <option value="0">No Promotion</option>
+        <option value="0.2">Moderate Promotion (+20%)</option>
+        <option value="0.3">High Promotion (+30%)</option>
+        <option value="0.5">Festival Sale (+50%)</option>
+    </select>
+
+    <label>Holding Cost (per unit)</label>
+    <input type="number" step="0.1" name="holding_cost" required>
+
+    <label>Stockout Cost (per unit)</label>
+    <input type="number" step="0.1" name="stockout_cost" required>
+
+    <button type="submit">Simulate Decision</button>
+</form>
+
+{% if result %}
+<hr>
+
+<p><b>Base Daily Demand:</b> {{ result.base_demand }}</p>
+<p><b>Adjusted Demand (after promotion):</b> {{ result.adjusted_demand }}</p>
+<p><b>Lead Time:</b> {{ result.lead_time }} days</p>
+<p><b>Current Inventory:</b> {{ result.current_inventory }}</p>
+
+<br>
+
+<p><b>Reorder Point:</b> {{ result.reorder_point }}</p>
+<p><b>Reorder Quantity:</b> {{ result.reorder_qty }}</p>
+<p><b>Status:</b> {{ result.status }}</p>
+
+<br>
+
+<p><b>Estimated Overstock Cost:</b> {{ result.overstock_cost }}</p>
+<p><b>Estimated Stockout Cost:</b> {{ result.stockout_cost }}</p>
+
+<br>
+
+<p><b>System Recommendation:</b> {{ result.decision }}</p>
+
+{% endif %}
+
+{% endblock %}

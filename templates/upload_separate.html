@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Separate Sales & Inventory CSV</title>
+</head>
+<body>
+<h2>Upload Separate Sales & Inventory CSV</h2>
+<p>The  csv must contain Date,Product_ID,Quantity_Sold,Product_Name,Current_Inventory,Lead_Time</p>
+
+<form method="POST" enctype="multipart/form-data">
+
+    <label>Sales CSV</label><br>
+    <input type="file" name="sales" required><br><br>
+
+    <label>Inventory CSV</label><br>
+    <input type="file" name="inventory" required><br><br>
+
+    <button type="submit">Upload & Analyze</button>
+</form>
+
+<br>
+<a href="{{ url_for('home') }}">Back to Home</a>
+
+</body>
+</html>
+
+{% endblock %}

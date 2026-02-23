@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card" style="max-width:400px;">
+    <h2>Settings</h2>
+
+    <p>This project uses session-based authentication.</p>
+
+    <form method="post" action="{{ url_for('logout') }}">
+        <button type="submit">Reset Project & Logout</button>
+    </form>
+</div>
+
+{% endblock %}

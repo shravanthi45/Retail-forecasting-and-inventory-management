@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Retail Forecasting – Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Retail Forecastig and Inventory Management</div>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('inventory') }}">Inventory</a>
+        <a href="{{ url_for('simulator') }}">Simulator</a>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Upload Data</h1>
+    <p>Select how you want to provide data for forecasting</p>
+
+    <div class="button-group">
+        <a href="{{ url_for('upload_separate') }}" class="btn-primary">
+            Upload Sales + Inventory CSV
+        </a>
+
+        <a href="{{ url_for('upload_combined') }}" class="btn-secondary">
+            Upload Combined CSV
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
